@@ -1,2 +1,2 @@
-# Jenksin Job configuration
+# Jenkins Job configuration
 
