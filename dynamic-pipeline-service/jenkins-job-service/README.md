@@ -1,2 +1,2 @@
-# Jenkisn JOb configuration
+# Jenksin Job configuration
 
