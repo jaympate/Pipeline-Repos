@@ -1,0 +1,153 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a jenkinsConfigJob code recieves final yaml from procexecflo,\
+    \ based on that will create the job"
+  version: "1.0.0"
+  title: "jenkinsConfigJob"
+  contact:
+    email: "xxxx.xxxx@company.com"
+tags:
+- name: "jenkinsConfigJob"
+  description: "This is a jenkinsConfigJob code recieves final yaml from procexecflo,\
+    \ based on that will create the job"
+schemes:
+- "https"
+- "http"
+paths:
+  /healthcheck:
+    get:
+      tags:
+        - "jenkinsConfigJob"
+      operationId: "healthcheck"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Success"
+        400:
+          description: "Bad request"
+      x-swagger-router-controller: "swagger_server.controllers.jenkins_config_job_controller"
+  /getenvironment:
+      get:
+        tags:
+          - "jenkinsConfigJob"
+        operationId: "getenvironment"
+        produces:
+          - "application/json"
+        responses:
+          200:
+            description: "Success"
+          400:
+            description: "Bad request"
+        x-swagger-router-controller: "swagger_server.controllers.jenkins_config_job_controller"
+  /invoke_jobconfig:
+    post:
+      tags:
+      - "jenkinsConfigJob"
+      operationId: "invoke_job_config"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Capture data from procexecflo"
+        required: true
+        schema:
+          $ref: "#/definitions/YamlData"
+      responses:
+        400:
+          description: "Bad request"
+      x-swagger-router-controller: "swagger_server.controllers.jenkins_config_job_controller"
+  /invoke_slot_swap:
+    post:
+      tags:
+        - "jenkinsConfigJob"
+      description: ""
+      operationId: "invoke_slot_swap"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Capture data from procexecflo"
+          required: true
+          schema:
+            $ref: "#/definitions/YamlData"
+      responses:
+        200:
+          description: "Request processed"
+          headers:
+            CID:
+              type: "string"
+              format: "uuid"
+              description: "Correlation ID"
+          schema:
+            $ref: "#/definitions/YamlData"
+        201:
+          description: "Request has been accepted for processing"
+          headers:
+            CID:
+              type: "string"
+              format: "uuid"
+              description: "Correlation ID"
+          schema:
+            $ref: "#/definitions/YamlData"
+        400:
+          description: "Bad request"
+          headers:
+            CID:
+              type: "string"
+              format: "uuid"
+              description: "Correlation ID"
+          schema:
+            $ref: "#/definitions/YamlData"
+        401:
+          description: "Unauthorized"
+          headers:
+            CID:
+              type: "string"
+              format: "uuid"
+              description: "Correlation ID"
+            flo:
+              type: "string"
+              description: "flo-name"
+          schema:
+            $ref: "#/definitions/YamlData"
+        403:
+          description: "Forbidden"
+          headers:
+            CID:
+              type: "string"
+              format: "uuid"
+              description: "Correlation ID"
+          schema:
+            $ref: "#/definitions/YamlData"
+        415:
+          description: "Unsupported Media Type"
+          headers:
+            CID:
+              type: "string"
+              format: "uuid"
+              description: "Correlation ID"
+          schema:
+            $ref: "#/definitions/YamlData"
+        500:
+          description: "Internal Server Error"
+          headers:
+            CID:
+              type: "string"
+              format: "uuid"
+              description: "Correlation ID"
+          schema:
+            $ref: "#/definitions/YamlData"
+      x-swagger-router-controller: "swagger_server.controllers.jenkins_config_job_controller"
+definitions:
+  YamlData:
+    type: "object"
+    xml:
+      name: "YamlData"

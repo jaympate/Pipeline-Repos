@@ -1,0 +1,53 @@
+{
+    'JENKINS': {
+        'schema':{
+          'git_global_user': {'required': True, 'empty': False, 'type': 'string'}
+
+        }
+    },
+    'GIT': {
+        'schema':{
+          'df_store_vkey': {'required': True, 'empty': False, 'type': 'string'}
+        }
+    },
+    'LOG':{
+      'schema':{
+        'log_location': {'required': False, 'empty': False, 'type': 'string'},
+        'flo_name': {'required': False, 'empty': False, 'type': 'string','default':'log_location'}
+
+      }
+
+    },
+    'PIPE_LINE_DETAILS': {
+        'schema':{
+          'continous_builder': {'required': True, 'empty': False, 'type': 'string'},
+          'artifact_repo': {'required': True, 'empty': False, 'type': 'string'},
+          'infra_automation_tool': {'required': True, 'empty': False, 'type': 'string'},
+          'issue_tracker': {'required': True, 'empty': False, 'type': 'string'},
+          'database': {'required': True, 'empty': False, 'type': 'string'},
+          'database_url': {'required': True, 'empty': False, 'type': 'string'}
+
+        }
+    },
+    'VAULT': {
+      'schema':{
+        'vault_url': {'required': True, 'empty': False, 'type': 'string'},
+        'vault_path': {'required': True, 'empty': False, 'type': 'string'}
+
+      }
+    },
+    'ARTIFACT_REPO': {
+      'schema':{
+        'artifact_repository': {'required': True, 'empty': False, 'type': 'string'},
+      }
+    },
+   'MAIL': {
+        'schema':{
+          'MAIL_FROM': {'required': True, 'empty': False, 'type': 'string', 'regex': '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'},
+          'JENKINS_MAIL_FROM': {'required': True, 'empty': False, 'type': 'string', 'regex': '^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'},
+          'MAIL_SUPPORT': {'required': True, 'empty': False, 'type': 'list'}
+        }
+        }
+
+
+   }

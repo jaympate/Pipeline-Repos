@@ -1,0 +1,15 @@
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - diusd-lapp0008.company.net:5044
+    ssl:
+      certificate_authorities:
+        - /etc/pki/tls/certs/logstash-beats.crt
+    timeout: 15
+
+filebeat:
+  prospectors:
+    -
+      paths:
+        - "/var/log/dynamic-pipeline/*"

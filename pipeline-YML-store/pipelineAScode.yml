@@ -1,0 +1,25 @@
+import: jira.yml
+
+pipeline_template      : 'dotnet_app'      
+
+jenkins_parameters:
+  Jenkins_Slave: 'DuckCreek'
+  Sonar_Server_Name: 'SonarQube'
+  Sonar_Scanner: 'C:\\sonar-scanner-3.2.0.1227\\bin\\'
+  Sonar_Host_URL: 'http://sonar.company.com:9000'
+  Sonar_Encoding: 'UTF-8'
+  Sonar_MSBuild: 'c:\\sonar-scanner-msbuild\\SonarScanner.MSBuild.exe'
+  Nexus_URL: 'nexus.company.com:8081'
+  Nexus_Version: 'nexus3'
+  Nexus_Protocol: 'http'
+  Nexus_Repository: 'Java-Application'
+  Nexus_Credential: 'nexus-service-account'
+  Package_Type: 'zip'
+  Git_Credential: 'SVC_DCSquareNA_Deploy'
+  Deployment_Credential: 'Deployment_Account'  
+  DB_Credential: 'DB_Service_account'
+  timeoutMinutes: 60
+  branch_to_update: 'SOHO2_sit' 
+  autoPromoteToNextEnv: 'no'
+  autoScheduleJob: 'no'
+  schedule_job: ''

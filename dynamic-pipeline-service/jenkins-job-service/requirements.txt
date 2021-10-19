@@ -1,0 +1,23 @@
+flo-framework == 0.0.31b
+connexion == 2.7.0
+python_dateutil == 2.6.0
+setuptools >= 21.0.0
+jenkinsapi == 0.3.6
+python-jenkins == 1.0.2
+jira == 2.0.0
+dateparser == 0.7.0
+pytz == 2018.9
+tzlocal == 1.5.1
+sentry-sdk==0.5.5
+cerberus == 1.2
+Flask-Testing==0.7.1
+arrow == 0.13.1
+coverage == 4.5.3
+pytest == 4.4.1
+pytest-cov == 2.6.1
+#Werkzeug==0.16.1
+Werkzeug==2.0.0
+py-healthcheck == 1.10.1
+jinja2 == 2.10.1
+PyYAML == 5.4.1
+certifi==2020.12.5

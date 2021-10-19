@@ -1,0 +1,11 @@
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - logstash-uat.company.com:5044
+    index: dev-df-job-config-flo
+filebeat:
+  inputs:
+    -
+      paths:
+        - "/var/log/dynamic-pipeline/*"

@@ -1,0 +1,12 @@
+output:
+  logstash:
+    enabled: true
+    hosts:
+      - logstash.company.com:5044
+    index: master-df-job-config-flo
+
+filebeat:
+  inputs:
+    -
+      paths:
+        - "/var/log/dynamic-pipeline/*"

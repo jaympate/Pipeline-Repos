@@ -1,0 +1,6 @@
+jira:
+  jira_project_id:  XXX  # <jira project ID to be mentioned , whcih will be configured at jenkins to create approval process >
+  jira_issue_type: "Deploy"
+  jira_field_check: status
+  workflow_status: "OPEN"
+  workflow_deploy_status: "APPROVED"
